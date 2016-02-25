@@ -1,0 +1,41 @@
+<?php
+$z[0]=Array("global","",423,452);
+$z[0][4]['name']="cfg_templeturl";
+$z[1]=Array("global","",514,543);
+$z[1][4]['name']="cfg_templeturl";
+$z[2]=Array("global","",621,650);
+$z[2][4]['name']="cfg_templeturl";
+$z[3]=Array("global","",724,753);
+$z[3][4]['name']="cfg_templeturl";
+$z[4]=Array("include","",824,859);
+$z[4][4]['filename']="head.htm";
+$z[5]=Array("field","",1360,1379);
+$z[5][4]['name']="title";
+$z[6]=Array("field","",1468,1488);
+$z[6][4]['name']="writer";
+$z[7]=Array("field","",1539,1559);
+$z[7][4]['name']="source";
+$z[8]=Array("field","",1622,1678);
+$z[8][4]['name']="pubdate";
+$z[8][4]['function']="MyDate('Y-m-d H:i',@me)";
+$z[9]=Array("field","",1743,1770);
+$z[9][4]['name']="phpurl";
+$z[10]=Array("field","",1794,1817);
+$z[10][4]['name']="id";
+$z[11]=Array("field","",1822,1846);
+$z[11][4]['name']="mid";
+$z[12]=Array("field","",2029,2047);
+$z[12][4]['name']="body";
+$z[13]=Array("prenext","",2164,2189);
+$z[13][4]['get']="pre";
+$z[14]=Array("prenext","",2231,2257);
+$z[14][4]['get']="next";
+$z[15]=Array("arclist","\r\n	    		<li>\r\n	    		<a title=\"[field:title/]\" href=\"[field:arcurl/]\">[field:title/]</a>\r\n	    		</li>\r\n				",2819,2978);
+$z[15][4]['row']="10";
+$z[15][4]['orderby']="click";
+$z[16]=Array("channel","\r\n    		   <li>\r\n    		   <a href=\"[field:typeurl/]\"><span>[field:typename/]</span></a>\r\n    		   </li>\r\n			   ",3513,3664);
+$z[16][4]['type']="son";
+$z[17]=Array("include","",3805,3842);
+$z[17][4]['filename']="footer.htm";
+
+?>

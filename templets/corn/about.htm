@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>公司介绍</title>
+<meta content=",公司介绍 " name="keywords" />
+<meta content="" name="description" />
+<link rel="stylesheet" type="text/css" href="{dede:global.cfg_templeturl/}/other/css/style.css" />
+<script type="text/javascript" src="{dede:global.cfg_templeturl/}/other/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="{dede:global.cfg_templeturl/}/other/js/lang-chi.min.js"></script>
+<script type="text/javascript" src="{dede:global.cfg_templeturl/}/other/js/common.min.js"></script>
+
+</head>
+<body ><div id="doc">
+	{dede:include filename="head.htm"/}
+	<div id="bd">
+	<div id="innerpg" class="bd-inner">
+		<div class="clearfix  layout-innerpg">
+		<div class="col-main">
+		<div class="main-wrap">
+
+			<div class="block first-block block-article-view">
+				<div class="block-head">
+					<div class="head-inner">
+						<h2 class="title">公司简介</h2>
+						<div class="links"><a href="/news">返回列表</a></div>
+					</div>
+				</div>
+				<div class="block-content clearfix">
+					<div class="article-content clearfix" style="padding-top:20px;">
+                    {dede:field.content/}
+					</div>
+				</div>
+				
+				<div class="block-foot"><div><div>-</div></div></div>
+			</div>
+		</div>
+		</div>
+		<dv class="col-sub">
+   		<div class="block first-block block-articles " id="block-articles-264791" rel="264791">
+    <div class="block-head">
+        <div class="head-inner">
+            <h2 class="title">新闻资讯</h2>
+			<div class="links"><a class="more" href="/news">更多</a></div>        
+		</div>
+    </div>
+    <div class="block-content clearfix">
+    	<div id="sys-marquee-a-264791" class="sys-marquee-a">
+	    	<ul>
+			{dede:arclist typeid=4 titlelen=20 row=8}
+	    	<li><span class="dot">·</span> <a title="[field:title/]" href="[field:arcurl/]">[field:title/]</a><em class="date">[field:pubdate function="MyDate('Y-m-d',@me)"/]</em></li>
+			{/dede:arclist}
+	    	</ul>
+    	</div>
+    	<script type="text/javascript">
+			$('#sys-marquee-a-264791').jMarquee({
+				visible:4,
+				step:1,
+				direction:"up"
+			});
+		</script>
+    </div>
+    <div class="block-foot"><div><div>-</div></div></div>
+</div>
+<div class="block  block-diy " id="block-diy-264793" rel="264793">
+    <div class="block-head">
+	    <div class="head-inner">
+	    	<h2 class="title">联系我们</h2>
+	    	    
+	    </div>
+    </div>
+    <div class="block-content clearfix">
+		<div class="content-text"><table style="width:100%;" class="ke-zeroborder" border="0" cellspacing="0" bordercolor="#000000" cellpadding="2">
+		<div class="hotline_text">
+            <p>地址：吉林省桦甸市二道甸子镇四道沟村二社<br>
+              电话：18243298686<br>
+              邮编：132400<br>
+              邮箱：hdnongxing@163.com</p>
+		</div>
+		</table>
+		</div>
+    </div>
+    <div class="block-foot"><div><div>-</div></div></div>
+ </div>	</div>    </div>
+    </div>
+    </div>
+	{dede:include filename="footer.htm"/}
+</div>
+<script type="text/javascript" src="/status/count"></script>
+<div class="tool-wrap tool-wrap-mini">
+		<div id="float-tool" class="float-tool">
+			<div class="link-close"><a id="float-tool-close" href="javascript:void(0);" title="隐藏">隐藏</a></div>
+			<ul class="tool-list">
+								
+								<li class="fav type"><a class="tool-btn" href="javascript:;" onclick="AddFav('http://site10565.www313.com/','我的网站')" title="加入收藏">加入收藏</a></li>
+												<li class="setindex type"><a class="tool-btn" href="javascript:void(0);" onclick="SetHome(this,'http://site10565.www313.com/')" title="设为首页">设为首页</a></li>
+												
+				<li class="clearfix type box share">
+					<div class="parent">
+						<em class="more"></em>
+						<a class="tool-btn" href="javascript:void(0);" title="分享">分享</a>
+					</div>
+					<div class="child">
+
+						<div class="bshare-custom">
+						   <a title="分享到腾讯朋友" class="bshare-qqxiaoyou">腾讯朋友</a>
+						   <a title="分享到新浪微博" class="bshare-sinaminiblog">新浪微博</a>
+						   <a title="分享到人人网" class="bshare-renren">人人网</a>
+						   <a title="分享到开心网" class="bshare-kaixin001">开心网</a>
+						   <a title="分享到豆瓣" class="bshare-douban">豆瓣</a>
+						   <!-- 在这里添加更多平台 -->
+						   <a title="更多平台" id="bshare-more-icon" class="bshare-more">更多...</a>
+						</div>
+						<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#uuid=a5cced98-d7c2-4769-a70b-7dcc3a7c3dc2&style=-1"></script>
+						<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC1.js"></script> 
+					</div>
+				</li>
+			</ul>			
+		</div>
+		<div class="float-tool-mini">
+			<div class="clearfix link-open"><a id="float-tool-mini" href="javascript:void(0);" title="工具栏">工具栏</a></div>
+		</div>
+		<div id="j-roll-btn" class="link-top"><a href="javascript:void(0);" title="回到顶部">回到顶部</a></div>
+	</div>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-553425-6']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
