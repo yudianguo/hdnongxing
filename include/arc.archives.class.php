@@ -549,9 +549,17 @@ class Archives
                 $tmpfile = $cfg_basedir.$cfg_templets_dir."/{$cfg_df_style}/article_spec.htm";
             }
         }
+        if ( defined('DEDEMOB') )
+        {
+            $tmpfile =str_replace('.htm','_m.htm',$tmpfile);
+        }
         if(!file_exists($tmpfile))
         {
             $tmpfile = $cfg_basedir.$cfg_templets_dir."/{$cfg_df_style}/".($cid=='spec' ? 'article_spec.htm' : 'article_default.htm');
+            if ( defined('DEDEMOB') )
+            {
+                $tmpfile =str_replace('.htm','_m.htm',$tmpfile);
+            }
         }
         if (!preg_match("#.htm$#", $tmpfile)) return FALSE;
         return $tmpfile;

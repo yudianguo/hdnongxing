@@ -20,9 +20,13 @@ $config = array(
     'font_file'   => dirname(__FILE__).'/data/fonts/'.mt_rand(1,3).'.ttf',
     'wordlist_file'   => dirname(__FILE__).'/data/words/words.txt',
     'filter_type' => 5);
-$sessSavePath = DEDEDATA."/sessions/";
+    
+$enkey = substr(md5(substr($cfg_domain_cookie,0,5)),0,10);
+$sessSavePath = DEDEDATA."/sessions_{$enkey}";
+if ( !is_dir($sessSavePath) ) mkdir($sessSavePath);
 
 // Session保存路径
+
 if(is_writeable($sessSavePath) && is_readable($sessSavePath)){ session_save_path($sessSavePath); }
 if(!empty($cfg_domain_cookie)) session_set_cookie_params(0,'/',$cfg_domain_cookie);
 

@@ -1081,7 +1081,7 @@ class Lurd extends DataListCP
         //并转换一些不安全字符串（如：eval(、union、CONCAT(、--、等）
         else if($this->stringSafe == 2)
         {
-            $str = addslashes(htmlspecialchars(stripslashes($str)));
+            $str = addslashes(dede_htmlspecialchars(stripslashes($str)));
             $str = preg_replace("#eval#i", 'ｅｖａｌ', $str);
             $str = preg_replace("#union#i", 'ｕｎｉｏｎ', $str);
             $str = preg_replace("#concat#i", 'ｃｏｎｃａｔ', $str);

@@ -122,7 +122,10 @@ if( preg_match('/windows/i', @getenv('OS')) )
 }
 
 //Session保存路径
-$sessSavePath = DEDEDATA."/sessions/";
+$enkey = substr(md5(substr($cfg_domain_cookie,0,5)),0,10);
+$sessSavePath = DEDEDATA."/sessions_{$enkey}";
+if ( !is_dir($sessSavePath) ) mkdir($sessSavePath);
+
 if(is_writeable($sessSavePath) && is_readable($sessSavePath))
 {
     session_save_path($sessSavePath);
@@ -187,6 +190,9 @@ $cfg_cmsurl = $cfg_mainsite.$cfg_cmspath;
 //插件目录，这个目录是用于存放计数器、投票、评论等程序的必要动态程序
 $cfg_plus_dir = $cfg_cmspath.'/plus';
 $cfg_phpurl = $cfg_mainsite.$cfg_plus_dir;
+
+$cfg_mobile_dir = $cfg_cmspath.'/m';
+$cfg_mobileurl = $cfg_mainsite.$cfg_mobile_dir;
 
 $cfg_data_dir = $cfg_cmspath.'/data';
 $cfg_dataurl = $cfg_mainsite.$cfg_data_dir;

@@ -30,8 +30,15 @@ $(function()
 	{
 		$("#__testEvn").html(data);
 	}
-  })
-})
+  });
+   $.get("index_body.php?dopost=get_seo",function(data)
+  {
+	if(data !== '')
+	{
+		$("#SEOInfo").html(data);
+	}
+  });
+});
 </script>
 </head>
 <body leftmargin="8" topmargin='8' bgcolor="#FFFFFF">
@@ -204,6 +211,12 @@ $(function()
                 正在载入中...
             </dd>
         </dl><!--信息统计结束-->
+<dl class='dbox' id="item7">
+            <dt class='lside'><div class='l'>SEO信息</div></dt>
+            <dd id='SEOInfo'>
+			正在载入中……
+            </dd>
+        </dl>
         <dl class='dbox' id="item7">
             <dt class='lside'><div class='l'>最新文档</div></dt>
             <dd id='listNews'>
@@ -250,6 +263,7 @@ $(function()
     </table>
             </dd>
         </dl><!--最新文档结束-->
+        
     </div>
 </div>
 <br style='clear:both'/>

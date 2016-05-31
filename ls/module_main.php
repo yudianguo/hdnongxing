@@ -647,7 +647,7 @@ else if($action=='edit')
     if(!isset($moduletype)) $moduletype = 'soft';
 
     $menustring = $dm->GetSystemFile($hash, 'menustring');
-    $setupsql40 = htmlspecialchars($dm->GetSystemFile($hash, 'setupsql40'));
+    $setupsql40 = dede_htmlspecialchars($dm->GetSystemFile($hash, 'setupsql40'));
     $readmetxt = $dm->GetSystemFile($hash, 'readme');
     $delsql = $dm->GetSystemFile($hash, 'delsql');
     $filelist = $dm->GetSystemFile($hash,'oldfilelist',false);

@@ -60,6 +60,13 @@ function helper($helpers)
     }
 }
 
+function dede_htmlspecialchars($str) {
+    global $cfg_soft_lang;
+    if (version_compare(PHP_VERSION, '5.4.0', '<')) return htmlspecialchars($str);
+    if ($cfg_soft_lang=='gb2312') return htmlspecialchars($str,ENT_COMPAT,'ISO-8859-1');
+    else return htmlspecialchars($str);
+}
+
 /**
  *  控制器调用函数
  *
@@ -179,7 +186,7 @@ function ShowMsg($msg, $gourl, $onlymsg=0, $limittime=0)
 {
     if(empty($GLOBALS['cfg_plus_dir'])) $GLOBALS['cfg_plus_dir'] = '..';
 
-    $htmlhead  = "<html>\r\n<head>\r\n<title>DedeCMS提示信息</title>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=gb2312\" />\r\n";
+    $htmlhead  = "<html>\r\n<head>\r\n<title>DedeCMS提示信息</title>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=gb2312\" />\r\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\">\r\n<meta name=\"renderer\" content=\"webkit\">\r\n<meta http-equiv=\"Cache-Control\" content=\"no-siteapp\" />";
     $htmlhead .= "<base target='_self'/>\r\n<style>div{line-height:160%;}</style></head>\r\n<body leftmargin='0' topmargin='0' bgcolor='#FFFFFF'>".(isset($GLOBALS['ucsynlogin']) ? $GLOBALS['ucsynlogin'] : '')."\r\n<center>\r\n<script>\r\n";
     $htmlfoot  = "</script>\r\n</center>\r\n</body>\r\n</html>\r\n";
 
@@ -268,15 +275,4 @@ function ResetVdValue()
 if( file_exists(DEDEINC.'/extend.func.php') )
 {
     require_once(DEDEINC.'/extend.func.php');
-}
-
-//留言板
-function pasterTempletDiy($path)
-{
-require_once(DEDEINC."/arc.partview.class.php");
-global $cfg_basedir,$cfg_templets_dir;
-$tmpfile = $cfg_basedir.$cfg_templets_dir."/".$path;//模版文件的路径
-$dtp = new PartView();
-$dtp->SetTemplet($tmpfile);
-$dtp->Display();
 }

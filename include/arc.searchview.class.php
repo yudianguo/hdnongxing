@@ -129,6 +129,10 @@ class SearchView
         
         
         $tempfile = $GLOBALS['cfg_basedir'].$GLOBALS['cfg_templets_dir']."/".$GLOBALS['cfg_df_style']."/search.htm";
+        if ( defined('DEDEMOB') )
+        {
+            $tempfile =str_replace('.htm','_m.htm',$tempfile);
+        }
         if(!file_exists($tempfile)||!is_file($tempfile))
         {
             echo "模板文件不存在，无法解析！";

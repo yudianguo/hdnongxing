@@ -266,7 +266,20 @@ function SpGetNewInfo()
     $phpv = phpversion();
     $sp_os = PHP_OS;
     $mysql_ver = $dsql->GetVersion();
-    $offUrl = "http://new"."ver.a"."pi.de"."decms.com/index.php?c=info57&version={$cfg_version}&formurl={$nurl}&phpver={$phpv}&os={$sp_os}&mysqlver={$mysql_ver}";
+    $seo_info = $dsql->GetOne("SELECT * FROM `#@__plus_seoinfo` ORDER BY id DESC");
+    $add_query = '';
+    if ( $seo_info )
+    {
+        $add_query .= "&alexa_num={$seo_info['alexa_num']}&alexa_area_num={$seo_info['alexa_area_num']}&baidu_count={$seo_info['baidu_count']}&sogou_count={$seo_info['sogou_count']}&haosou360_count={$seo_info['haosou360_count']}";
+    }
+    $query = " SELECT COUNT(*) AS dd FROM `#@__member` ";
+    $row1 = $dsql->GetOne($query);
+    if ( $row1 ) $add_query .= "&mcount={$row1['dd']}";
+    $query = " SELECT COUNT(*) AS dd FROM `#@__arctiny` ";
+    $row2 = $dsql->GetOne($query);
+    if ( $row2 ) $add_query .= "&acount={$row2['dd']}";
+    
+    $offUrl = "http://new"."ver.a"."pi.de"."decms.com/index.php?c=info57&version={$cfg_version}&formurl={$nurl}&phpver={$phpv}&os={$sp_os}&mysqlver={$mysql_ver}{$add_query}";
     return $offUrl;
 }
 
