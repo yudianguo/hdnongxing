@@ -43,7 +43,8 @@ function _FilterAll($fk, &$svar)
     if (!$magic_quotes_gpc) {
         $svar = addslashes($svar);
     }
-    return $svar;
+	return addslashes($svar);
+//    return $svar;
 }
 
 /* 对_GET,_POST,_COOKIE进行过滤 */

@@ -68,6 +68,8 @@ elseif ($dopost == 'save')
     foreach ($mtypename as $id => $name)
     {
         $name = HtmlReplace($name);
+   	/* 对$id进行规范化处理 */
+    	$id = intval($id);
         $query = "UPDATE `#@__mtypes` SET mtypename='$name' WHERE mtypeid='$id' AND mid='$cfg_ml->M_ID'";
         $dsql->ExecuteNoneQuery($query);
     }
