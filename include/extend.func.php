@@ -19,3 +19,12 @@ function litimgurls($imgid=0)
     //返回结果
     return $lit_imglist;
 }
+function pasterTempletDiy($path)
+{
+  require_once(DEDEINC."/arc.partview.class.php");
+  global $cfg_basedir,$cfg_templets_dir;
+  $tmpfile = $cfg_basedir.$cfg_templets_dir."/".$path;//模版文件的路径
+  $dtp = new PartView();
+  $dtp->SetTemplet($tmpfile);
+  $dtp->Display();
+}
